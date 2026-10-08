@@ -92,11 +92,6 @@ namespace ST_1_3_Coding
             }
         }
 
-        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            // Executes when unchecked
-        }
-
         private void ResetTestResults()
         {
             string speedPlaceholder = "0 MB/s";
