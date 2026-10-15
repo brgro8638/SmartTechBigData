@@ -1,0 +1,90 @@
+﻿<Window x:Class="ST_1_6_Pipeline.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_1_6_Pipeline"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="370" Width="850">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- File Path Row -->
+            <RowDefinition Height="Auto"/>
+            <!-- Panels Row -->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top Control Bar -->
+        <WrapPanel Grid.Row="0" Margin="0,0,0,10" VerticalAlignment="Center">
+            <Button x:Name="BtnSelectFile" Content="Select File" Margin="0,0,10,5" Padding="12,6"/>
+            <Button x:Name="BtnRunCompression" Content="Run Compression" Margin="0,0,10,5" Padding="12,6"/>
+            <Button x:Name="BtnVisualizeTree" Content="Visualize Tree" Margin="0,0,10,5" Padding="12,6"/>
+            <Button x:Name="BtnVisualizeCodebook" Content="Visualize Codebook" Margin="0,0,10,5" Padding="12,6"/>
+            <CheckBox x:Name="ChkConfirmRoundTrip" Content="Confirm Round-Trip" IsChecked="True" VerticalAlignment="Center" Margin="10,0,0,5"/>
+        </WrapPanel>
+
+        <!-- Selected File Status -->
+        <TextBlock x:Name="TxtFilePath" Grid.Row="1" Text="No file selected." Foreground="Gray" Margin="0,0,0,10" TextTrimming="CharacterEllipsis"/>
+
+        <!-- Side-by-Side Panels -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Huffman + CABAC Panel -->
+            <GroupBox Grid.Column="0" Header="Huffman + CABAC" Margin="0,0,8,0" Padding="12">
+                <StackPanel>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Original Size:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtPipeOriginal" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Encoded Size:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtPipeEncoded" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Encoding Ratio:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtPipeRatio" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Encoding Speed:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtPipeSpeed" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Round Trip Passed:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtPipeRoundTrip" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Naive RLE Panel -->
+            <GroupBox Grid.Column="1" Header="Naive RLE" Margin="8,0,0,0" Padding="12">
+                <StackPanel>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Original Size:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtRleOriginal" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Encoded Size:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtRleEncoded" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Encoding Ratio:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtRleRatio" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Encoding Speed:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtRleSpeed" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0,4">
+                        <TextBlock Text="Round Trip Passed:" FontWeight="Bold"/>
+                        <TextBlock x:Name="TxtRleRoundTrip" Text="-" HorizontalAlignment="Right"/>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>
