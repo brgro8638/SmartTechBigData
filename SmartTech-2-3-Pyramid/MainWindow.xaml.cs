@@ -118,6 +118,7 @@ namespace ST_2_3_Pyramid
                 };
 
                 targetPanel.Children.Add(border);
+                currentImage++;
             }
         }
 
