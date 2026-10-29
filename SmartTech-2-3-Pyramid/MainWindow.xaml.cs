@@ -60,7 +60,7 @@ namespace ST_2_3_Pyramid
             _laplacianPyramid = Pyramids.BuildLaplacianPyramid(_gaussianPyramid);
 
             DisplayPyramidLayers(StackPanelGaussian, _gaussianPyramid);
-            DisplayPyramidLayers(StackPanelLaplacian, _laplacianPyramid);
+            DisplayPyramidLayers(StackPanelLaplacian, _laplacianPyramid, 64.0);
 
             TabPyramids.Visibility = Visibility.Visible;
             MainTabControl.SelectedItem = TabPyramids;
@@ -82,15 +82,21 @@ namespace ST_2_3_Pyramid
             MainTabControl.SelectedItem = TabReconstruct;
         }
 
-        private void DisplayPyramidLayers(StackPanel targetPanel, List<Mat> pyramidImages)
+        private void DisplayPyramidLayers(StackPanel targetPanel, List<Mat> pyramidImages, double? intensityAdjustment = null)
         {
             targetPanel.Children.Clear();
 
+            int currentImage = 0, lastImage = pyramidImages.Count - 1; 
+            
             foreach (var mat in pyramidImages)
             {
-                if (mat.Empty()) continue;
-
                 Mat displayFriendlyMat = Pyramids.ToUINT8(mat);
+            
+                if (intensityAdjustment != null && currentImage != lastImage)
+                {
+                    displayFriendlyMat.ConvertTo(displayFriendlyMat, MatType.CV_8UC1, 1.5, intensityAdjustment.Value);
+                }
+            
                 BitmapSource bitmapSource = displayFriendlyMat.ToBitmapSource();
 
                 Image imgControl = new()
