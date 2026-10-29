@@ -22,7 +22,7 @@ coders:
 Run the application from the repository root:
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install -r excel_compressor/requirements.txt
 streamlit run excel_compressor/app.py
 ```
 
