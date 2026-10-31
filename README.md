@@ -33,3 +33,16 @@ The regression checks can be run with:
 ```bash
 python excel_compressor/test_roundtrip.py
 ```
+
+## 2D→3D Clustering Visualizer
+
+The `BigData-1-6-Visualizer3D` folder contains the application for issue
+[#9](https://github.com/brgro8638/SmartTechBigData/issues/9). It clusters a
+DICOM series (CT or MR) or the differential frames of a video with six
+algorithms and compares them in interactive 3D plots. See
+`BigData-1-6-Visualizer3D/README.md` for details.
+
+```bash
+python -m pip install -r BigData-1-6-Visualizer3D/requirements.txt
+streamlit run BigData-1-6-Visualizer3D/app.py
+```

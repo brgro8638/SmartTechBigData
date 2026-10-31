@@ -1,0 +1,7 @@
+data/
+*.dcm
+*.zip
+*.mp4
+*.avi
+*.mov
+__pycache__/
