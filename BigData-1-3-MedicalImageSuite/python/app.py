@@ -217,8 +217,10 @@ def tab_pipeline(name, volume, gt, config, impl_name):
         if config["pca"]["enabled"]:
             st.markdown("**PCA**")
             explained = result["info"]["explained_variance"]
-            st.bar_chart(pd.DataFrame({"explained variance": explained},
-                                      index=[f"PC{i + 1}" for i in range(len(explained))]))
+            # Plotly instead of st.bar_chart: st.bar_chart needs Altair, which fails
+            # with the older typing_extensions in some Anaconda installations
+            st.plotly_chart(px.bar(x=[f"PC{i + 1}" for i in range(len(explained))], y=explained,
+                                   labels={"x": "component", "y": "explained variance ratio"}, height=260))
             st.dataframe(pd.DataFrame(result["components"], columns=own.FEATURE_NAMES,
                                       index=[f"PC{i + 1}" for i in range(len(explained))]).round(3))
     if config["pca"]["enabled"]:
