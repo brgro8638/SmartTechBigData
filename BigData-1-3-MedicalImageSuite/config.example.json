@@ -1,0 +1,11 @@
+{
+  "slice": 5,
+  "normalize": {"p_low": 0.5, "p_high": 99.5},
+  "smooth_sigma": 1.0,
+  "pca": {"enabled": false, "n_components": 2},
+  "method": "kmeans",
+  "kmeans": {"k": 4, "max_iter": 100, "tol": 1e-6},
+  "threshold": {"mode": "otsu", "value": 0.5},
+  "region_growing": {"seed_x": 128, "seed_y": 128, "tolerance": 0.12},
+  "watershed": {"low": 0.15, "high": 0.6, "min_marker_size": 20}
+}

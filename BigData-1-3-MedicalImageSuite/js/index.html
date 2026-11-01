@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Image Analysis Suite (JS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Medical Image Analysis Suite <span class="tag">JavaScript</span></h1>
+  <p>Normalize → Gaussian smoothing → PCA → K-Means / thresholding / region growing / watershed.
+    Same algorithms and config format as the Python app (SPEC.md). Runs fully in the browser – desktop or mobile.</p>
+</header>
+
+<div class="layout">
+  <aside>
+    <section>
+      <h2>1 · Dataset</h2>
+      <button id="btn-phantom">Load synthetic phantom</button>
+      <label class="file">Open .npy / image
+        <input type="file" id="file-data" accept=".npy,.png,.jpg,.jpeg,.bmp,.gif,.webp">
+      </label>
+      <p class="hint" id="dataset-info">No dataset loaded.</p>
+      <label>Slice <output id="out-slice">0</output>
+        <input type="range" id="slice" min="0" max="0" value="0">
+      </label>
+    </section>
+
+    <section>
+      <h2>2 · Pipeline</h2>
+      <label class="file">Import config (.json)
+        <input type="file" id="file-config" accept=".json">
+      </label>
+      <h3>Pre-processing</h3>
+      <div class="row">
+        <label>Low percentile <input type="number" id="p_low" min="0" max="100" step="0.5"></label>
+        <label>High percentile <input type="number" id="p_high" min="0" max="100" step="0.5"></label>
+      </div>
+      <label>Gaussian σ <output id="out-sigma"></output>
+        <input type="range" id="smooth_sigma" min="0" max="5" step="0.25">
+      </label>
+      <label class="check"><input type="checkbox" id="pca_enabled"> PCA on 5 per-pixel features</label>
+      <label>PCA components <output id="out-ncomp"></output>
+        <input type="range" id="n_components" min="1" max="5" step="1">
+      </label>
+
+      <h3>Method</h3>
+      <select id="method">
+        <option value="kmeans">K-Means clustering</option>
+        <option value="threshold">Thresholding</option>
+        <option value="region_growing">Region growing</option>
+        <option value="watershed">Watershed</option>
+      </select>
+      <p class="hint">Values refer to the work image, scaled to [0, 1].</p>
+
+      <fieldset data-method="kmeans">
+        <legend>K-Means</legend>
+        <label>k <output id="out-k"></output><input type="range" id="k" min="2" max="10" step="1"></label>
+        <label>Max iterations <input type="number" id="max_iter" min="1" max="1000"></label>
+      </fieldset>
+      <fieldset data-method="threshold">
+        <legend>Thresholding</legend>
+        <select id="th_mode">
+          <option value="otsu">Otsu (automatic)</option>
+          <option value="manual">Manual</option>
+        </select>
+        <label>Manual threshold <output id="out-thv"></output>
+          <input type="range" id="th_value" min="0" max="1" step="0.01"></label>
+      </fieldset>
+      <fieldset data-method="region_growing">
+        <legend>Region growing</legend>
+        <p class="hint">Tap / click the input image to set the seed.</p>
+        <div class="row">
+          <label>Seed x <input type="number" id="seed_x" min="0"></label>
+          <label>Seed y <input type="number" id="seed_y" min="0"></label>
+        </div>
+        <label>Tolerance <output id="out-tol"></output>
+          <input type="range" id="tolerance" min="0" max="0.5" step="0.01"></label>
+      </fieldset>
+      <fieldset data-method="watershed">
+        <legend>Watershed markers</legend>
+        <div class="row">
+          <label>Background &lt; <input type="number" id="ws_low" min="0" max="1" step="0.01"></label>
+          <label>Objects &gt; <input type="number" id="ws_high" min="0" max="1" step="0.01"></label>
+        </div>
+        <label>Min. marker size (px) <input type="number" id="ws_min" min="1"></label>
+      </fieldset>
+    </section>
+
+    <section>
+      <h2>3 · Export (shared format)</h2>
+      <div class="buttons">
+        <button id="btn-export-labels">labels.npy</button>
+        <button id="btn-export-result">result.json</button>
+        <button id="btn-export-config">config.json</button>
+      </div>
+    </section>
+  </aside>
+
+  <main>
+    <nav class="tabs">
+      <button data-tab="pipeline" class="active">Pipeline</button>
+      <button data-tab="algorithms">Compare algorithms</button>
+      <button data-tab="reference">Compare with Python result</button>
+    </nav>
+
+    <div class="tab" id="tab-pipeline">
+      <div class="images">
+        <figure><canvas id="cv-input"></canvas><figcaption id="cap-input">Input</figcaption></figure>
+        <figure><canvas id="cv-work"></canvas><figcaption id="cap-work">Work image</figcaption></figure>
+        <figure><canvas id="cv-result"></canvas><figcaption id="cap-result">Result</figcaption></figure>
+      </div>
+      <div class="metrics" id="metrics"></div>
+      <div class="two">
+        <div>
+          <h3>Runtime per step (ms)</h3>
+          <table id="tbl-timings"></table>
+          <h3>Method info</h3>
+          <pre id="info"></pre>
+        </div>
+        <div id="pca-panel" hidden>
+          <h3>PCA</h3>
+          <table id="tbl-pca"></table>
+          <div class="images small" id="pca-images"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab" id="tab-algorithms" hidden>
+      <p>Runs every method on the same slice with the current parameters.</p>
+      <label class="check"><input type="checkbox" id="both-pca" checked> Run each method with and without PCA</label>
+      <button id="btn-run-all" class="primary">Run all algorithms</button>
+      <p class="hint" id="best"></p>
+      <table id="tbl-all"></table>
+      <div class="images grid" id="all-images"></div>
+    </div>
+
+    <div class="tab" id="tab-reference" hidden>
+      <p>Load a <code>labels.npy</code> exported from the Python app (same dataset, slice and config) to
+        compare it pixel by pixel with this JavaScript result.</p>
+      <label class="file">Open Python labels.npy <input type="file" id="file-reference" accept=".npy"></label>
+      <div class="metrics" id="ref-metrics"></div>
+      <div class="images">
+        <figure><canvas id="cv-ref-js"></canvas><figcaption>JavaScript (this app)</figcaption></figure>
+        <figure><canvas id="cv-ref-py"></canvas><figcaption>Python (loaded file)</figcaption></figure>
+        <figure><canvas id="cv-ref-diff"></canvas><figcaption id="cap-diff">Differences (red)</figcaption></figure>
+      </div>
+    </div>
+    <p class="status" id="status"></p>
+  </main>
+</div>
+
+<script src="mia-core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

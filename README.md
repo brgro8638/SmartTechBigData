@@ -46,3 +46,18 @@ algorithms and compares them in interactive 3D plots. See
 python -m pip install -r BigData-1-6-Visualizer3D/requirements.txt
 streamlit run BigData-1-6-Visualizer3D/app.py
 ```
+
+## Medical Image Analysis Suite
+
+The `BigData-1-3-MedicalImageSuite` folder contains the application for issue
+[#6](https://github.com/brgro8638/SmartTechBigData/issues/6): a medical image analysis
+application implemented in both Python (Streamlit) and JavaScript (browser,
+also mobile). Pipeline: normalization, Gaussian smoothing, PCA, K-Means,
+thresholding (manual/Otsu), region growing and watershed, with comparison of
+algorithms and of implementations. See
+`BigData-1-3-MedicalImageSuite/README.md` for details.
+
+```bash
+python -m pip install -r BigData-1-3-MedicalImageSuite/python/requirements.txt
+streamlit run BigData-1-3-MedicalImageSuite/python/app.py
+```
