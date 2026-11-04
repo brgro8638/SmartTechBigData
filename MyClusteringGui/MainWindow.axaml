@@ -4,6 +4,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MyClusteringGui.MainWindow"
-        Title="MyClusteringGui">
-    Welcome to Avalonia!
+        Title="Harnverhalt image loader"
+        Width="1000"
+        Height="700">
+    <DockPanel Margin="24">
+        <StackPanel DockPanel.Dock="Top" Spacing="12">
+            <TextBlock FontSize="24" FontWeight="Bold">Harnverhalt DICOM viewer</TextBlock>
+            <TextBlock TextWrapping="Wrap">
+                Open the Harnverhalt2 ZIP. pydicom reads the DICOM file and OpenCV normalizes and enhances the selected image.
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" Spacing="12">
+                <Button Name="ChooseZipButton" Click="ChooseZipButton_OnClick">Choose ZIP file</Button>
+                <Button Name="LoadImageButton" Click="LoadImageButton_OnClick" IsEnabled="False">Load first image</Button>
+            </StackPanel>
+            <TextBlock Name="StatusText" Text="No ZIP file selected." TextWrapping="Wrap" />
+        </StackPanel>
+
+        <Border Margin="0,20,0,0" BorderBrush="#888888" BorderThickness="1" Padding="12">
+            <Image Name="PreviewImage" Stretch="Uniform" />
+        </Border>
+    </DockPanel>
 </Window>

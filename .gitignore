@@ -4,3 +4,5 @@ bin/
 obj/
 *.pyc
 .DS_Store
+.vscode/
+Harnverhalt2.zip

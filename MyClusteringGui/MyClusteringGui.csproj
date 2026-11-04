@@ -16,4 +16,8 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\harnverhalt.py" Link="harnverhalt.py" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>
