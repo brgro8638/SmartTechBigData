@@ -1,0 +1,109 @@
+Category,Source,Size,Nominal bits,Prediction,Entropy H0 (bits),Coder,Bits/pixel,Ratio,Total bytes,Header bytes,Encode s,Decode s,Lossless
+Generated,Shapes with noise,256x256,8,None (raw values),4.5565,Huffman,4.5986,1.7396,37672,143,0.0058,0.0763,True
+Generated,Shapes with noise,256x256,8,None (raw values),4.5565,Arithmetic,4.5784,1.7473,37506,179,0.1374,0.2412,True
+Generated,Shapes with noise,256x256,8,None (raw values),4.5565,CABAC,3.2936,2.429,26981,7,0.4923,0.3919,True
+Generated,Shapes with noise,256x256,8,Left neighbour,3.6503,Huffman,3.6931,2.1662,30254,226,0.006,0.0698,True
+Generated,Shapes with noise,256x256,8,Left neighbour,3.6503,Arithmetic,3.6799,2.174,30146,242,0.1175,0.181,True
+Generated,Shapes with noise,256x256,8,Left neighbour,3.6503,CABAC,3.7174,2.152,30453,7,0.2921,0.2431,True
+Generated,Shapes with noise,256x256,8,MED (JPEG-LS),3.6812,Huffman,3.7234,2.1486,30502,216,0.006,0.0642,True
+Generated,Shapes with noise,256x256,8,MED (JPEG-LS),3.6812,Arithmetic,3.7096,2.1566,30389,232,0.144,0.1841,True
+Generated,Shapes with noise,256x256,8,MED (JPEG-LS),3.6812,CABAC,3.7443,2.1366,30673,7,0.2866,0.2493,True
+Generated,Smooth gradient,256x256,8,None (raw values),6.7156,Huffman,6.7767,1.1805,55515,265,0.0049,0.1065,True
+Generated,Smooth gradient,256x256,8,None (raw values),6.7156,Arithmetic,6.7616,1.1832,55391,376,0.1801,0.2833,True
+Generated,Smooth gradient,256x256,8,None (raw values),6.7156,CABAC,3.9841,2.008,32638,8,0.4859,0.3865,True
+Generated,Smooth gradient,256x256,8,Left neighbour,0.81,Huffman,1.2507,6.3963,10246,13,0.0045,0.0238,True
+Generated,Smooth gradient,256x256,8,Left neighbour,0.81,Arithmetic,0.8119,9.8536,6651,15,0.0485,0.0763,True
+Generated,Smooth gradient,256x256,8,Left neighbour,0.81,CABAC,1.0018,7.9854,8207,7,0.1202,0.0962,True
+Generated,Smooth gradient,256x256,8,MED (JPEG-LS),0.8069,Huffman,1.2488,6.4063,10230,13,0.0044,0.0235,True
+Generated,Smooth gradient,256x256,8,MED (JPEG-LS),0.8069,Arithmetic,0.8088,9.8907,6626,15,0.0488,0.0758,True
+Generated,Smooth gradient,256x256,8,MED (JPEG-LS),0.8069,CABAC,0.9949,8.0412,8150,7,0.1229,0.0984,True
+Generated,Checkerboard,256x256,8,None (raw values),1.0,Huffman,1.0015,7.9883,8204,12,0.0043,0.0198,True
+Generated,Checkerboard,256x256,8,None (raw values),1.0,Arithmetic,1.002,7.9844,8208,15,0.0451,0.0734,True
+Generated,Checkerboard,256x256,8,None (raw values),1.0,CABAC,0.2999,26.6732,2457,7,0.3477,0.2864,True
+Generated,Checkerboard,256x256,8,Left neighbour,0.2089,Huffman,1.0294,7.7714,8433,16,0.0055,0.0192,True
+Generated,Checkerboard,256x256,8,Left neighbour,0.2089,Arithmetic,0.2113,37.8602,1731,19,0.0343,0.0529,True
+Generated,Checkerboard,256x256,8,Left neighbour,0.2089,CABAC,0.3301,24.2367,2704,7,0.1088,0.0859,True
+Generated,Checkerboard,256x256,8,MED (JPEG-LS),0.012,Huffman,1.0029,7.9766,8216,16,0.0042,0.0184,True
+Generated,Checkerboard,256x256,8,MED (JPEG-LS),0.012,Arithmetic,0.0142,564.9655,116,17,0.0294,0.0447,True
+Generated,Checkerboard,256x256,8,MED (JPEG-LS),0.012,CABAC,0.0498,160.6275,408,7,0.0806,0.0611,True
+Generated,Gaussian noise,256x256,8,None (raw values),5.6416,Huffman,5.6862,1.4069,46581,208,0.0051,0.0931,True
+Generated,Gaussian noise,256x256,8,None (raw values),5.6416,Arithmetic,5.674,1.41,46481,265,0.161,0.2534,True
+Generated,Gaussian noise,256x256,8,None (raw values),5.6416,CABAC,5.7853,1.3828,47393,8,0.5997,0.457,True
+Generated,Gaussian noise,256x256,8,Left neighbour,6.1394,Huffman,6.2136,1.2875,50902,273,0.0073,0.1001,True
+Generated,Gaussian noise,256x256,8,Left neighbour,6.1394,Arithmetic,6.1819,1.2941,50642,348,0.1708,0.2795,True
+Generated,Gaussian noise,256x256,8,Left neighbour,6.1394,CABAC,6.3645,1.257,52138,7,0.667,0.5749,True
+Generated,Gaussian noise,256x256,8,MED (JPEG-LS),6.1812,Huffman,6.2562,1.2787,51251,281,0.0091,0.1033,True
+Generated,Gaussian noise,256x256,8,MED (JPEG-LS),6.1812,Arithmetic,6.2251,1.2851,50996,359,0.1837,0.2708,True
+Generated,Gaussian noise,256x256,8,MED (JPEG-LS),6.1812,CABAC,6.3993,1.2501,52423,7,0.7061,0.5807,True
+Generated,Uniform noise,256x256,8,None (raw values),7.9975,Huffman,8.0635,0.9921,66056,520,0.0048,0.1243,True
+Generated,Uniform noise,256x256,8,None (raw values),7.9975,Arithmetic,8.0922,0.9886,66291,775,0.2087,0.3327,True
+Generated,Uniform noise,256x256,8,None (raw values),7.9975,CABAC,8.1246,0.9847,66557,7,0.7079,0.5672,True
+Generated,Uniform noise,256x256,8,Left neighbour,8.7136,Huffman,8.8662,0.9023,72632,1027,0.0082,0.15,True
+Generated,Uniform noise,256x256,8,Left neighbour,8.7136,Arithmetic,8.8699,0.9019,72662,1280,0.2226,0.3669,True
+Generated,Uniform noise,256x256,8,Left neighbour,8.7136,CABAC,9.0835,0.8807,74412,7,1.188,0.9186,True
+Generated,Uniform noise,256x256,8,MED (JPEG-LS),8.7118,Huffman,8.8657,0.9024,72628,1027,0.0081,0.1577,True
+Generated,Uniform noise,256x256,8,MED (JPEG-LS),8.7118,Arithmetic,8.8682,0.9021,72648,1280,0.2637,0.3703,True
+Generated,Uniform noise,256x256,8,MED (JPEG-LS),8.7118,CABAC,9.0768,0.8814,74357,7,1.0218,0.9171,True
+Generated,Skewed binary (2 % ones),256x256,8,None (raw values),0.1403,Huffman,1.0013,7.9893,8203,11,0.0042,0.0191,True
+Generated,Skewed binary (2 % ones),256x256,8,None (raw values),0.1403,Arithmetic,0.142,56.3508,1163,13,0.0298,0.0484,True
+Generated,Skewed binary (2 % ones),256x256,8,None (raw values),0.1403,CABAC,0.1498,53.4116,1227,7,0.0838,0.0704,True
+Generated,Skewed binary (2 % ones),256x256,8,Left neighbour,0.2768,Huffman,1.0406,7.6875,8525,13,0.0045,0.0196,True
+Generated,Skewed binary (2 % ones),256x256,8,Left neighbour,0.2768,Arithmetic,0.2788,28.6935,2284,16,0.036,0.0569,True
+Generated,Skewed binary (2 % ones),256x256,8,Left neighbour,0.2768,CABAC,0.2474,32.3315,2027,7,0.0897,0.0658,True
+Generated,Skewed binary (2 % ones),256x256,8,MED (JPEG-LS),0.3668,Huffman,1.0585,7.5581,8671,13,0.0042,0.0204,True
+Generated,Skewed binary (2 % ones),256x256,8,MED (JPEG-LS),0.3668,Arithmetic,0.3689,21.6863,3022,16,0.0384,0.0598,True
+Generated,Skewed binary (2 % ones),256x256,8,MED (JPEG-LS),0.3668,CABAC,0.2823,28.3338,2313,7,0.1026,0.0677,True
+Generated,Constant,256x256,8,None (raw values),-0.0,Huffman,1.0012,7.9902,8202,10,0.0042,0.0187,True
+Generated,Constant,256x256,8,None (raw values),-0.0,Arithmetic,0.0015,5461.3333,12,11,0.0253,0.0418,True
+Generated,Constant,256x256,8,None (raw values),-0.0,CABAC,0.0304,263.1968,249,8,0.0772,0.0672,True
+Generated,Constant,256x256,8,Left neighbour,0.0003,Huffman,1.0015,7.9883,8204,12,0.0044,0.0187,True
+Generated,Constant,256x256,8,Left neighbour,0.0003,Arithmetic,0.002,4096.0,16,13,0.0254,0.0408,True
+Generated,Constant,256x256,8,Left neighbour,0.0003,CABAC,0.0308,260.0635,252,7,0.0794,0.0571,True
+Generated,Constant,256x256,8,MED (JPEG-LS),0.0003,Huffman,1.0015,7.9883,8204,12,0.0043,0.0189,True
+Generated,Constant,256x256,8,MED (JPEG-LS),0.0003,Arithmetic,0.002,4096.0,16,13,0.0252,0.0441,True
+Generated,Constant,256x256,8,MED (JPEG-LS),0.0003,CABAC,0.0308,260.0635,252,7,0.0776,0.0573,True
+Real-life,astronaut.png,256x256,8,None (raw values),7.5715,Huffman,7.668,1.0433,62816,520,0.0053,0.1232,True
+Real-life,astronaut.png,256x256,8,None (raw values),7.5715,Arithmetic,7.6561,1.0449,62719,693,0.197,0.3145,True
+Real-life,astronaut.png,256x256,8,None (raw values),7.5715,CABAC,5.3218,1.5033,43596,7,0.5813,0.462,True
+Real-life,astronaut.png,256x256,8,Left neighbour,5.2139,Huffman,5.3196,1.5039,43578,597,0.0074,0.087,True
+Real-life,astronaut.png,256x256,8,Left neighbour,5.2139,Arithmetic,5.2933,1.5113,43363,650,0.1559,0.2431,True
+Real-life,astronaut.png,256x256,8,Left neighbour,5.2139,CABAC,4.7681,1.6778,39060,7,0.4329,0.3785,True
+Real-life,astronaut.png,256x256,8,MED (JPEG-LS),4.7595,Huffman,4.8444,1.6514,39685,475,0.0075,0.0825,True
+Real-life,astronaut.png,256x256,8,MED (JPEG-LS),4.7595,Arithmetic,4.8229,1.6588,39509,519,0.1422,0.2252,True
+Real-life,astronaut.png,256x256,8,MED (JPEG-LS),4.7595,CABAC,4.4684,1.7904,36605,7,0.3954,0.3542,True
+Real-life,coffee.png,256x256,8,None (raw values),7.548,Huffman,7.6393,1.0472,62581,520,0.0061,0.1245,True
+Real-life,coffee.png,256x256,8,None (raw values),7.548,Arithmetic,7.6313,1.0483,62516,682,0.2005,0.3269,True
+Real-life,coffee.png,256x256,8,None (raw values),7.548,CABAC,4.9238,1.6248,40336,7,0.5992,0.5031,True
+Real-life,coffee.png,256x256,8,Left neighbour,4.4585,Huffman,4.5663,1.752,37407,637,0.0079,0.0907,True
+Real-life,coffee.png,256x256,8,Left neighbour,4.4585,Arithmetic,4.5403,1.762,37194,670,0.1533,0.2418,True
+Real-life,coffee.png,256x256,8,Left neighbour,4.4585,CABAC,4.057,1.9719,33235,7,0.4125,0.3325,True
+Real-life,coffee.png,256x256,8,MED (JPEG-LS),4.1926,Huffman,4.2924,1.8638,35163,557,0.0116,0.0724,True
+Real-life,coffee.png,256x256,8,MED (JPEG-LS),4.1926,Arithmetic,4.2644,1.876,34934,588,0.1314,0.2148,True
+Real-life,coffee.png,256x256,8,MED (JPEG-LS),4.1926,CABAC,3.9147,2.0436,32069,7,0.3451,0.2844,True
+Real-life,elephant.png,256x256,8,None (raw values),7.3838,Huffman,7.469,1.0711,61186,478,0.0055,0.1209,True
+Real-life,elephant.png,256x256,8,None (raw values),7.3838,Arithmetic,7.4637,1.0718,61143,654,0.1971,0.3628,True
+Real-life,elephant.png,256x256,8,None (raw values),7.3838,CABAC,4.8444,1.6514,39685,7,0.6868,0.4712,True
+Real-life,elephant.png,256x256,8,Left neighbour,4.0371,Huffman,4.1367,1.9339,33888,459,0.0072,0.0875,True
+Real-life,elephant.png,256x256,8,Left neighbour,4.0371,Arithmetic,4.0978,1.9523,33569,497,0.1544,0.2003,True
+Real-life,elephant.png,256x256,8,Left neighbour,4.0371,CABAC,3.5001,2.2856,28673,7,0.3277,0.2731,True
+Real-life,elephant.png,256x256,8,MED (JPEG-LS),3.5034,Huffman,3.5916,2.2274,29422,381,0.0063,0.0619,True
+Real-life,elephant.png,256x256,8,MED (JPEG-LS),3.5034,Arithmetic,3.5535,2.2513,29110,410,0.1129,0.1786,True
+Real-life,elephant.png,256x256,8,MED (JPEG-LS),3.5034,CABAC,3.1257,2.5594,25606,7,0.2814,0.232,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,None (raw values),6.2427,Huffman,6.3259,1.2646,51822,520,0.0055,0.1043,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,None (raw values),6.2427,Arithmetic,6.3208,1.2657,51780,639,0.1654,0.2702,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,None (raw values),6.2427,CABAC,4.3171,1.8531,35366,7,0.5378,0.4292,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,Left neighbour,4.8514,Huffman,4.9376,1.6202,40449,529,0.007,0.085,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,Left neighbour,4.8514,Arithmetic,4.9219,1.6254,40320,577,0.1434,0.249,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,Left neighbour,4.8514,CABAC,4.2861,1.8665,35112,7,0.4159,0.3699,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,MED (JPEG-LS),4.4855,Huffman,4.5569,1.7556,37330,333,0.0066,0.0758,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,MED (JPEG-LS),4.4855,Arithmetic,4.5309,1.7657,37117,371,0.1347,0.2123,True
+Medical,"Harnverhalt CT, window 8 bit",256x256,8,MED (JPEG-LS),4.4855,CABAC,3.986,2.007,32653,7,0.3689,0.3145,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,None (raw values),8.9353,Huffman,9.3965,1.2771,76976,3573,0.0549,0.1477,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,None (raw values),8.9353,Arithmetic,9.3868,1.2784,76897,3699,0.2366,0.3853,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,None (raw values),8.9353,CABAC,7.3789,1.6263,60448,8,0.8556,0.6662,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,Left neighbour,6.6377,Huffman,6.8575,1.7499,56177,1482,0.0095,0.1086,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,Left neighbour,6.6377,Arithmetic,6.8281,1.7574,55936,1559,0.1871,0.2994,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,Left neighbour,6.6377,CABAC,6.6028,1.8174,54090,7,0.6913,0.6007,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,MED (JPEG-LS),6.064,Huffman,6.1913,1.9382,50719,850,0.0079,0.1001,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,MED (JPEG-LS),6.064,Arithmetic,6.1755,1.9432,50590,913,0.1698,0.2808,True
+Medical,"Harnverhalt CT, stored 12 bit",256x256,12,MED (JPEG-LS),6.064,CABAC,6.1173,1.9616,50113,7,0.6186,0.5464,True
