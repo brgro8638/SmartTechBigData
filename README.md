@@ -61,3 +61,9 @@ algorithms and of implementations. See
 python -m pip install -r BigData-1-3-MedicalImageSuite/python/requirements.txt
 streamlit run BigData-1-3-MedicalImageSuite/python/app.py
 ```
+
+## Data Coder (Huffman, arithmetic coding, CABAC)
+
+The `SmartTech-1-5` folder contains a Streamlit GUI that reads generated images,
+Harnverhalt CT slices, real photos and raw files, and compares the encoding and
+performance of the three coders. See [`SmartTech-1-5/README.md`](SmartTech-1-5/README.md).

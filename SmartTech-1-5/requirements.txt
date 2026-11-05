@@ -1,0 +1,9 @@
+streamlit>=1.50,<2
+numpy>=1.24
+pandas>=1.5
+plotly>=5.9
+pillow>=9.0
+pydicom>=2.4,<3
+pylibjpeg>=2.0
+pylibjpeg-libjpeg>=2.1
+pytest>=7.0
