@@ -1,0 +1,10 @@
+# Endoscopy videos are course/patient material and must never be committed (public repo).
+videos/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.mpg
+*.mpeg
+*.wmv
+*.m4v
