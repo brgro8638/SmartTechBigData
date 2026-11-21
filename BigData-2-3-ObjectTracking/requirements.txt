@@ -1,4 +1,0 @@
-ultralytics
-numpy
-opencv-python
-Pillow
