@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Organ Tool</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #1b1e24; }
+      canvas { display: block; touch-action: none; }
+      #hint {
+        position: fixed; left: 12px; bottom: 12px; padding: 8px 10px;
+        font: 12px/1.5 system-ui, sans-serif; color: #c9ced8;
+        background: rgba(0, 0, 0, 0.45); border-radius: 6px; pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hint">
+      Left-drag on the object: use the selected tool (Grab / Poke / Pin)<br />
+      Left-drag on empty space: orbit &middot; Right-drag: pan &middot; Wheel: zoom
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
