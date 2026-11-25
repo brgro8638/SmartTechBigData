@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+aiortc
+pydicom
+opencv-python-headless
+numpy
+gdcm
+pylibjpeg 
+pylibjpeg-libjpeg 
+pylibjpeg-openjpeg

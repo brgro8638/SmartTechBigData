@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DICOM stream</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <span id="status" class="status">connecting…</span>
+    <span id="stats"></span>
+  </header>
+
+  <main>
+    <div id="viewer">
+      <img id="img" alt="DICOM slice" draggable="false">
+      <div id="hud"></div>
+    </div>
+
+    <section class="panel">
+      <h2>Slice <span id="sliceLabel"></span></h2>
+      <div class="row">
+        <button id="prev" aria-label="Previous slice">‹</button>
+        <input id="slice" type="range" min="0" max="0" value="0">
+        <button id="next" aria-label="Next slice">›</button>
+        <button id="play">▶ Play</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Window / level <span id="wlLabel"></span></h2>
+      <div class="row wrap">
+        <button data-wc="40" data-ww="400">Soft tissue</button>
+        <button data-wc="-600" data-ww="1500">Lung</button>
+        <button data-wc="400" data-ww="1800">Bone</button>
+        <button data-wc="40" data-ww="80">Brain</button>
+        <button id="wlDefault">Default</button>
+      </div>
+      <div class="row">
+        <label><input type="radio" name="tool" value="seed" checked> Tap = seed point</label>
+        <label><input type="radio" name="tool" value="wl"> Drag = window/level</label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Filter</h2>
+      <select id="filter"></select>
+    </section>
+
+    <section class="panel">
+      <h2>Segmentation</h2>
+      <div class="row">
+        <select id="seg">
+          <option value="none">Off</option>
+          <option value="region">Region growing (tap a seed)</option>
+          <option value="watershed">Watershed (tap a seed, or none = automatic)</option>
+        </select>
+        <button id="clearSeed">Clear seed</button>
+      </div>
+      <div class="row">
+        <label for="tol">Tolerance <span id="tolLabel">10</span></label>
+        <input id="tol" type="range" min="1" max="60" value="10">
+      </div>
+      <p id="area" class="muted"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Image format</h2>
+      <select id="fmt">
+        <option value="png">PNG (lossless)</option>
+        <option value="jpeg">JPEG 90 (smaller)</option>
+      </select>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
